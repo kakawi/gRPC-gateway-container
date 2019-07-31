@@ -7,7 +7,7 @@ destination_port=${DESTINATION_PORT}
 proxy_port=${PROXY_PORT}
 
 # In this file will be collected information from first part and use it in second part
-tmp_registration_file=$(mktemp /tmp/registration_file-XXXXX)
+tmp_registration_file=$(mktemp)
 
 # `protoc` can't handle relatives path correctly, so we should start from a proper folder
 # all our *.proto files should be under `/proto` folder
@@ -35,7 +35,7 @@ for current_dir in $(find ${start_dir} -type d); do
         # To generate proxy we should add `google.api.http` annotation, but we don't want to add them
         # in proto files, so we can create gRPC Service Configuration file
         # Ref: https://cloud.google.com/endpoints/docs/grpc/grpc-service-config
-        grpc_service_configuration_file=$(mktemp /tmp/grpc-service-configuration-XXXX.yaml)
+        grpc_service_configuration_file=$(mktemp)
 
         # Gather names to generate gRPC Service Configuration file
         # Every service will be have such http rules
