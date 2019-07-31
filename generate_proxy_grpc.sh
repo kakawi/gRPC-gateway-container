@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+proxy_grpc_script=$1 # result file
 start_dir=${START_DIR}
 destination_host=${DESTINATION_HOST}
 destination_port=${DESTINATION_PORT}
@@ -83,8 +84,6 @@ done
 echo "All Proto files converted in Go"
 
 # 3. Generate Go script which will start all Proxies altogether
-proxy_grpc_script=${PROXY_EXEC_FILE}
-
 # 3.1 Add head of file
 cat <<-EOF >${proxy_grpc_script}
 package main

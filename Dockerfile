@@ -86,7 +86,6 @@ ADD ./watcher.sh /
 RUN chmod +x /generate_proxy_grpc.sh
 RUN chmod +x /watcher.sh
 
-ENV PROXY_EXEC_FILE=/proxy_grpc_generated.go
 ENV START_DIR=.
 ENV DESTINATION_HOST=localhost
 ENV DESTINATION_PORT=8087
