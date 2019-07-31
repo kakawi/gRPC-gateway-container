@@ -83,5 +83,5 @@ ENV PROXY_PORT=9031
 
 WORKDIR /
 
-CMD ["/watcher.sh"]
+ENTRYPOINT ["/watcher.sh"]
 #ENTRYPOINT ["/bin/ash"]

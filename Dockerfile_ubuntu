@@ -93,5 +93,5 @@ ENV PROXY_PORT=9031
 
 RUN apt -y install inotify-tools
 
-CMD ["/watcher.sh"]
+ENTRYPOINT ["/watcher.sh"]
 #ENTRYPOINT ["/bin/bash"]
