@@ -38,7 +38,7 @@ http://localhost:9031/YourService/Echo
 ```
 
 ## Start container
-docker run -d --net=host -it -e START_DIR=<DIR_FOR_PROTO_FILES> -v <PROTO_FILES>:/proto/<DIR_FOR_PROTO_FILES> kakawi/grpc-gateway-container
+docker run -d --net=host -it -e START_DIR=<DIR_FOR_PROTO_FILES> -v <PROTO_FILES>:/proto/ kakawi/grpc-gateway-container
 
 P.S. if you use Mac delete `--net=host` parameter and add parameters
 `--publish 9031:9031 -e DESTINATION_HOST=host.docker.internal`
@@ -51,6 +51,10 @@ DESTINATION_HOST - [localhost]
 DESTINATION_PORT - [8087]
 
 PROXY_PORT - [9031]
+
+FILTER - [] more specific reqex for directory where to look for **.proto** files
+
+DEBUG_MODE - [off]
 
 ## Docker Hub: 
 https://cloud.docker.com/u/kakawi/repository/docker/kakawi/grpc-gateway-container

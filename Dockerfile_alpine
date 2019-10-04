@@ -76,10 +76,12 @@ ADD ./watcher.sh /
 RUN chmod +x /generate_proxy_grpc.sh
 RUN chmod +x /watcher.sh
 
-ENV START_DIR=.
+ENV FILTER=
+ENV START_DIR=
 ENV DESTINATION_HOST=localhost
 ENV DESTINATION_PORT=8087
 ENV PROXY_PORT=9031
+ENV DEBUG_MODE=off
 
 WORKDIR /
 
